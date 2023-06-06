@@ -6,35 +6,35 @@
  *
  *
  */
+
 export const header = () => {
   const headerElement = document.querySelector('header');
   headerElement.classList.add('bg-theme-dark');
 
-  return (headerElement.innerHTML = `<div class="container-fluid">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-        <div class="d-flex gap-2">
-          <img src="/src/assets/icons/noroff-logo.svg" class="Logo-noroff" />
+  return (headerElement.innerHTML = `
+  <nav class="navbar navbar-expand-lg bg-dark w-100 mb-5">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html">
+      <div class="d-flex gap-2 m-2">
+          <img src="/src/assets/icons/noroff-logo.svg" class="Logo-noroff" width="60" height="70" />
           <div class="d-flex flex-column">
-              <span class="company_name text-white">Noroff</span>
-              <span class="company_branch text-white">Job Agency</span>
+            <h3><span class="company_name text-white">Noroff</span></h3>
+            <h6><span class="company_branch text-white">Job Agency</span></h6>
           </div>
-          </div>
-      </a>
-        <button class="navbar-toggler shadow-none navbar-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon navbar-dark"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         </div>
+        </a>
+      <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler dropdown" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon rounded-1 border-0 dropdown-toggle" id="navbarDropdown" role="button" data-bs-target="dropdown" style="background-color: white;"></span>
+      </button>
+      <div class="collapse navbar-collapse m-2" id="navbarNav">
       </div>
-    </nav>
-</div>`);
+      </div>
+ </nav>`);
 };
 
 // For testing states
-const stateValue = "null"
-localStorage.setItem("Role", stateValue)
+const stateValue = 'null';
+localStorage.setItem('Role', stateValue);
 let pageTitle = document.querySelector('title');
 pageTitle.innerText = 'Standard';
 
@@ -52,43 +52,53 @@ export const checkState = () => {
   const role = localStorage.getItem('Role');
   const navBarNav = document.getElementById('navbarNav');
   if (role == 'user') {
-    return (navBarNav.innerHTML = `<ul class="navbar-nav gap-2">
+    return (navBarNav.innerHTML = `<ul class="navbar-nav d-flex align-items-center gap-2">
     <li class="nav-item">
-      <a class="nav-link text-white" aria-current="page" href="/pages/user/index.html">Profile</a>
+      <a class="btn btn-theme-secondary nav-link text-white active border-0" id="home" href="/index.html">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-white" href="/pages/listings/index.html">Listings</a>
+      <a class="btn btn-theme-secondary nav-link text-white" aria-current="page" href="/pages/user/index.html">Profile</a>
     </li>
     <li class="nav-item">
-      <a class="btn btn-outline-light text-white" href="#" id="signOut">Log out</a>
+      <a class=" btn btn-theme-secondary nav-link text-white" href="/pages/listings/index.html">Listings</a>
+    </li>
+    <li class="nav-item">
+      <a class="btn btn-theme-secondary text-white" href="#" id="signOut">Log out</a>
     </li>
   </ul>`);
   }
 
   if (role == 'admin') {
-    return (navBarNav.innerHTML = `<ul class="navbar-nav gap-2">
+    return (navBarNav.innerHTML = `<ul class="navbar-nav d-flex align-items-center gap-2">
     <li class="nav-item">
-      <a class="nav-link text-white" aria-current="page" href="#">Profile</a>
+      <a class="btn btn-theme-secondary nav-link text-white active border-0" id="home" href="/index.html">Home</a>
     </li>
     <li class="nav-item">
-    <a class="nav-link text-white" href="/pages/listings/index.html">Listings</a>
+      <a class="btn btn-theme-secondary nav-link text-white" aria-current="page" href="#">Profile</a>
     </li>
     <li class="nav-item">
-    <a class="btn btn-outline-light text-white" href="#" id="logOutUser">Log out</a>
+    <a class="btn btn-theme-secondary nav-link text-white" href="/pages/listings/index.html">Listings</a>
+    </li>
+    <li class="nav-item">
+    <a class="btn btn-theme-secondary nav-link text-white" href="#" id="logOutUser">Log out</a>
     </li>
   </ul>`);
   }
 
   if (role == 'null') {
-    return (navBarNav.innerHTML = `<ul class="navbar-nav gap-2">
+    return (navBarNav.innerHTML = `
+    <ul class=" d-flex navbar-nav d-flex align-items-center gap-4">
     <li class="nav-item">
-    <a class="nav-link text-white" href="/pages/listings/index.html">Listings</a>
+      <a class="btn btn-theme-secondary nav-link text-white active border-0 px-3" id="home" href="/index.html">Home</a>
     </li>
     <li class="nav-item">
-      <a class="btn btn-outline-light text-white" href="/pages/auth/login/index.html" id="signInUser">Sign in</a>
+    <a class="btn btn-theme-secondary nav-link text-white border-0 px-3" href="/pages/listings/index.html">Listings</a>
     </li>
     <li class="nav-item">
-      <a class="btn btn-theme-secondary text-black" id="registerUser" href="/pages/auth/register/applicant/index.html">Register</a>
+      <a class="btn btn-theme-secondary nav-link text-white bg-dark border-white rounded-0 px-3" href="/pages/auth/login/index.html" id="signInUser">Log in</a>
+    </li>
+    <li class="nav-item">
+      <a class="btn btn-theme-secondary nav-link text-black rounded-0 px-3" style="background-color: #08F3B0;" id="registerUser" href="/pages/auth/register/applicant/index.html">Register</a>
     </li>
   </ul>`);
   }
