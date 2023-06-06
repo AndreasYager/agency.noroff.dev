@@ -54,16 +54,16 @@ export const checkState = () => {
   if (role == 'user') {
     return (navBarNav.innerHTML = `<ul class="navbar-nav d-flex align-items-center gap-2">
     <li class="nav-item">
-      <a class="btn btn-theme-secondary nav-link text-white active border-0" id="home" href="/index.html">Home</a>
+      <a class="btn btn-theme-secondary nav-link text-white active border-0 px-3" id="home" href="/index.html">Home</a>
     </li>
     <li class="nav-item">
-      <a class="btn btn-theme-secondary nav-link text-white" aria-current="page" href="/pages/user/index.html">Profile</a>
+      <a class=" btn btn-theme-secondary nav-link text-white px-3" href="/pages/listings/index.html">Listings</a>
     </li>
     <li class="nav-item">
-      <a class=" btn btn-theme-secondary nav-link text-white" href="/pages/listings/index.html">Listings</a>
+      <a class="btn btn-theme-secondary nav-link text-white bg-dark border-white rounded-0 px-3" aria-current="page" href="/pages/user/index.html">Profile</a>
     </li>
     <li class="nav-item">
-      <a class="btn btn-theme-secondary text-white" href="#" id="signOut">Log out</a>
+      <a class="btn btn-theme-secondary text-white px-3" style="background-color: #08F3B0; href="#" id="signOut">Log out</a>
     </li>
   </ul>`);
   }
@@ -71,16 +71,16 @@ export const checkState = () => {
   if (role == 'admin') {
     return (navBarNav.innerHTML = `<ul class="navbar-nav d-flex align-items-center gap-2">
     <li class="nav-item">
-      <a class="btn btn-theme-secondary nav-link text-white active border-0" id="home" href="/index.html">Home</a>
+      <a class="btn btn-theme-secondary nav-link text-white active border-0 px-3" id="home" href="/index.html">Home</a>
     </li>
     <li class="nav-item">
-      <a class="btn btn-theme-secondary nav-link text-white" aria-current="page" href="#">Profile</a>
+      <a class="btn btn-theme-secondary nav-link text-white px-3" aria-current="page" href="#">Profile</a>
     </li>
     <li class="nav-item">
-    <a class="btn btn-theme-secondary nav-link text-white" href="/pages/listings/index.html">Listings</a>
+    <a class="btn btn-theme-secondary nav-link text-white bg-dark border-white rounded-0 px-3" href="/pages/listings/index.html">Listings</a>
     </li>
     <li class="nav-item">
-    <a class="btn btn-theme-secondary nav-link text-white" href="#" id="logOutUser">Log out</a>
+    <a class=""btn btn-theme-secondary nav-link text-black rounded-0 px-3" style="background-color: #08F3B0;" href="#" id="logOutUser">Log out</a>
     </li>
   </ul>`);
   }
