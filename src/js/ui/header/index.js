@@ -12,24 +12,26 @@ export const header = () => {
   headerElement.classList.add('bg-theme-dark');
 
   return (headerElement.innerHTML = `
-  <nav class="navbar navbar-expand-lg bg-dark w-100 mb-5">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg d-flex bg-dark w-100 mb-5">
+    <div class="container d-flex justify-content-center">
       <a class="navbar-brand" href="/index.html">
       <div class="d-flex gap-2 m-2">
-          <img src="/src/assets/icons/noroff-logo.svg" class="Logo-noroff" width="60" height="70" />
+          <img src="/src/assets/icons/noroff-logo.svg" class="Logo-noroff" width="55" height="65" />
           <div class="d-flex flex-column">
             <h3><span class="company_name text-white">Noroff</span></h3>
             <h6><span class="company_branch text-white">Job Agency</span></h6>
           </div>
         </div>
+        </div>
         </a>
       <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler dropdown" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon rounded-1 border-0 dropdown-toggle" id="navbarDropdown" role="button" data-bs-target="dropdown" style="background-color: white;"></span>
+      <span class="navbar-toggler-icon rounded-1 border-0 dropdown-toggle d-flex justify-content-center " id="navbarDropdown" role="button" data-bs-target="dropdown" style="background-color: white; height: 40px; width: 40px"></span>
       </button>
+      </div> 
       <div class="collapse navbar-collapse m-2" id="navbarNav">
       </div>
-      </div>
- </nav>`);
+ </nav>`
+   );
 };
 
 // For testing states
