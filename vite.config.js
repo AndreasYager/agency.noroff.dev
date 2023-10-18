@@ -1,8 +1,14 @@
-export default {
-    base: '/',
-    server: {
-      port: 5173,
-      hot: true,
-      host: '127.0.0.1'
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  base: '/',
+  build: {
+    rollupOptions: {
+      input: {
+        home: resolve(__dirname, 'src/pages/index.html'),
+        // anotherPage: resolve(__dirname, 'src/pages/anotherPlace/index.html'),
+      },
     },
-  };
+  },
+})
